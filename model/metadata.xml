@@ -1,0 +1,116 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZPI_MONITOR_APP_SRV" xml:lang="de" sap:schema-version="1">
+            <EntityType Name="Getmsglist" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Msgkey"/>
+                    <PropertyRef Name="Msgid"/>
+                </Key>
+                <Property Name="Msgkey" Type="Edm.String" Nullable="false" sap:label="MSGKEY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Msgid" Type="Edm.String" Nullable="false" sap:label="MSGID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" sap:label="STATUS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sndparty" Type="Edm.String" Nullable="false" sap:label="SNDPARTY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sndcomponent" Type="Edm.String" Nullable="false" sap:label="SNDCOMPONENT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rcvparty" Type="Edm.String" Nullable="false" sap:label="RCVPARTY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rcvcomponent" Type="Edm.String" Nullable="false" sap:label="RCVCOMPONENT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Interface" Type="Edm.String" Nullable="false" sap:label="INTERFACE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Namespace" Type="Edm.String" Nullable="false" sap:label="NAMESPACE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fromtime" Type="Edm.String" Nullable="false" sap:label="FROMTIME" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Totime" Type="Edm.String" Nullable="false" sap:label="TOTIME" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="MsgToLog" Relationship="ZPI_MONITOR_APP_SRV.MsgToLog" FromRole="FromRole_MsgToLog" ToRole="ToRole_MsgToLog"/>
+                <NavigationProperty Name="MsgToContent" Relationship="ZPI_MONITOR_APP_SRV.MsgToContent" FromRole="FromRole_MsgToContent" ToRole="ToRole_MsgToContent"/>
+            </EntityType>
+            <EntityType Name="Return" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Message"/>
+                </Key>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Nachrichtentyp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Nachrichtenklasse" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Number" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Nachrichtennummer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="220" sap:label="Meldungstext" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LogNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Protokollnr" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LogMsgNo" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="NrMeldung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MessageV1" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Nachrichtenvariable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MessageV2" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Nachrichtenvariable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MessageV3" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Nachrichtenvariable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MessageV4" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Nachrichtenvariable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parameter" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Parametername" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Row" Type="Edm.Int32" Nullable="false" sap:label="Parameterzeile" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Field" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Feldname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="System" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Logisches System" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Getlogentry" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Msgid"/>
+                    <PropertyRef Name="Msgkey"/>
+                </Key>
+                <Property Name="Logentries" Type="ZPI_MONITOR_APP_SRV.Logentries" Nullable="false"/>
+                <Property Name="Msgid" Type="Edm.String" Nullable="false" sap:label="MSGID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Msgkey" Type="Edm.String" Nullable="false" sap:label="MSGKEY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Getmsgcontent" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Msgkey"/>
+                    <PropertyRef Name="Msgid"/>
+                </Key>
+                <Property Name="Msgkey" Type="Edm.String" Nullable="false" sap:label="Message-Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Msgid" Type="Edm.String" Nullable="false" sap:label="MSGID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Response" Type="Edm.String" Nullable="false" sap:label="RESPONSE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <ComplexType Name="Logentries">
+                <Property Name="Msgkey" Type="Edm.String" Nullable="false" sap:label="MSGKEY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Log" Type="Edm.String" Nullable="false" sap:label="LOG" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <Association Name="MsgToLog" sap:content-version="1">
+                <End Type="ZPI_MONITOR_APP_SRV.Getmsglist" Multiplicity="1" Role="FromRole_MsgToLog"/>
+                <End Type="ZPI_MONITOR_APP_SRV.Getlogentry" Multiplicity="0..1" Role="ToRole_MsgToLog"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_MsgToLog">
+                        <PropertyRef Name="Msgid"/>
+                        <PropertyRef Name="Msgkey"/>
+                    </Principal>
+                    <Dependent Role="ToRole_MsgToLog">
+                        <PropertyRef Name="Msgid"/>
+                        <PropertyRef Name="Msgkey"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="MsgToContent" sap:content-version="1">
+                <End Type="ZPI_MONITOR_APP_SRV.Getmsglist" Multiplicity="1" Role="FromRole_MsgToContent"/>
+                <End Type="ZPI_MONITOR_APP_SRV.Getmsgcontent" Multiplicity="0..1" Role="ToRole_MsgToContent"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_MsgToContent">
+                        <PropertyRef Name="Msgid"/>
+                        <PropertyRef Name="Msgkey"/>
+                    </Principal>
+                    <Dependent Role="ToRole_MsgToContent">
+                        <PropertyRef Name="Msgid"/>
+                        <PropertyRef Name="Msgkey"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZPI_MONITOR_APP_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ReturnSet" EntityType="ZPI_MONITOR_APP_SRV.Return" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="GetlogentrySet" EntityType="ZPI_MONITOR_APP_SRV.Getlogentry" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="GetmsgcontentSet" EntityType="ZPI_MONITOR_APP_SRV.Getmsgcontent" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="GetmsglistSet" EntityType="ZPI_MONITOR_APP_SRV.Getmsglist" sap:searchable="true" sap:content-version="1"/>
+                <AssociationSet Name="MsgToContentSet" Association="ZPI_MONITOR_APP_SRV.MsgToContent" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="GetmsglistSet" Role="FromRole_MsgToContent"/>
+                    <End EntitySet="GetmsgcontentSet" Role="ToRole_MsgToContent"/>
+                </AssociationSet>
+                <AssociationSet Name="MsgToLogSet" Association="ZPI_MONITOR_APP_SRV.MsgToLog" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="GetmsglistSet" Role="FromRole_MsgToLog"/>
+                    <End EntitySet="GetlogentrySet" Role="ToRole_MsgToLog"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://sprgts:8888/sap/opu/odata/sap/ZPI_MONITOR_APP_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://sprgts:8888/sap/opu/odata/sap/ZPI_MONITOR_APP_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

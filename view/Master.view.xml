@@ -1,0 +1,48 @@
+<mvc:View controllerName="com.springer.pimonitoring.controller.Master" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page id="page" title="{i18n>masterTitle}">
+		<subHeader>
+			<Bar id="searchBar">
+				<contentMiddle>
+					<SearchField id="searchField" showRefreshButton="{device>/isNoTouch}" placeholder="{i18n>masterSearchPlaceholder}" search="onSearch"
+						tooltip="{i18n>masterSearchTooltip}" width="100%"></SearchField>
+				</contentMiddle>
+			</Bar>
+		</subHeader>
+		<content>
+		    <RadioButtonGroup width="100%" columns="3" selectedIndex="-1" id="radbutTime" fieldGroupIds="rad_but_time" select="onSelect">
+		        <buttons>
+		            <RadioButton xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" groupName="radbutTime" text="1 hour" id="rad_but_lasthour" fieldGroupIds="radbutTime"/>
+		            <RadioButton xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" groupName="radbutTime" id="rad_but_lastday" text="Today" fieldGroupIds="radbutTime" selected="true"/>
+		            <RadioButton xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" groupName="radbutTime" text="Week" id="rad_but_week" fieldGroupIds="radbutTime"/></buttons>
+		    </RadioButtonGroup>
+		    <RadioButtonGroup width="100%" columns="3" selectedIndex="-1" id="radbutStatus" fieldGroupIds="rad_but_status" select="onSelect">
+		        <buttons>
+		            <RadioButton selected="true" groupName="radbutStatus" text="Success" id="rad_but_success" fieldGroupIds="radbutStatus"/>
+		            <RadioButton groupName="radbutStatus" text="Error" id="rad_but_error" fieldGroupIds="radbutStatus"/>
+		            <RadioButton groupName="radbutStatus" text="All" id="rad_but_all" fieldGroupIds="radbutStatus" selected="true"/></buttons>
+		    </RadioButtonGroup>
+		    <Button text="Filter" width="100px" id="searchButton" press="onSearch"/>
+			<List	id="list" 
+					items="{/GetmsglistSet}" 
+					mode="{device>/listMode}" 
+					noDataText="{i18n>masterListNoDataText}" 
+					select="onSelect" 
+					growing="true" 
+                    growingThreshold="30"
+					growingScrollToLoad="true">
+				<items>
+					<ObjectListItem type="{device>/listItemType}"
+									press="onSelect" 
+									title="{Interface}" 
+									number="" 
+									numberUnit=""/>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+				
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>
