@@ -40,7 +40,7 @@ com.springer.pimonitoring.dev.devapp = {
 				if (that.smpInfo.server && that.smpInfo.server.length > 0) {
 					var context = {
 						"serverHost": that.smpInfo.server,
-						"https": data.hybrid.msType === 0 ? "true" : "false",
+						"https": true,
 						"serverPort": that.smpInfo.port
 					};
 					that.devLogon = new com.springer.pimonitoring.dev.devlogon();
