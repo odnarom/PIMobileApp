@@ -10,6 +10,13 @@ com.springer.pimonitoring.util.Controller.extend("com.springer.pimonitoring.cont
 	onInit: function() {
 		this.getView().setBusy(true);
 
+		// event after screen objects loaded
+		this.getView().addEventDelegate({
+			onAfterShow: jQuery.proxy(function(evt) {
+				this.onAfterShow(evt);
+			}, this)
+		});
+
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
 
 		this.getView().byId("list").attachEventOnce("updateFinished", function() {
@@ -31,8 +38,7 @@ com.springer.pimonitoring.util.Controller.extend("com.springer.pimonitoring.cont
 
 		oEventBus.subscribe("Detail", "Changed", this.onDetailChanged, this);
 		oEventBus.subscribe("Detail", "NotFound", this.onNotFound, this);
-	
-		this.getView().setBusy(false);
+
 	},
 
 	/**
@@ -61,6 +67,10 @@ com.springer.pimonitoring.util.Controller.extend("com.springer.pimonitoring.cont
 
 		});
 
+	},
+	
+	onAfterShow: function() {
+		this.getView().setBusy(false);
 	},
 
 	/**
