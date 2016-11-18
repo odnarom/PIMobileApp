@@ -1,14 +1,14 @@
 {
   "welcomeFile": "index.html",
-  "routes": [
+  "routes": [ 
     {
       "path": "/sap/opu/odata",
       "target": {
         "type": "destination",
-        "name": "sprgts",
+        "name": "sprgps",
         "entryPath": "/sap/opu/odata"
       },
-      "description": "SAP GTS"
+      "description": "SAP GPS"
     },
     {
       "path": "/resources",

@@ -1,11 +1,11 @@
 jQuery.sap.declare("com.springer.pimonitoring.Component");
 jQuery.sap.require("com.springer.pimonitoring.dev.devapp");
 jQuery.sap.require("com.springer.pimonitoring.MyRouter");
-
+ 
 sap.ui.core.UIComponent.extend("com.springer.pimonitoring.Component", {
-	metadata: {
+	metadata: { 
 		name: "PI Monitoring App",
-		version: "1.0",
+		version: "1.0", 
 		includes: [],
 		dependencies: {
 			libs: ["sap.m", "sap.ui.layout"],

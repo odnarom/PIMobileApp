@@ -108,9 +108,9 @@
                 </AssociationSet>
             </EntityContainer>
             <atom:link
-                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://sprgts:8888/sap/opu/odata/sap/ZPI_MONITOR_APP_SRV/$metadata"/>
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://sprgqs:8888/sap/opu/odata/sap/ZPI_MONITOR_APP_SRV/$metadata"/>
                 <atom:link
-                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://sprgts:8888/sap/opu/odata/sap/ZPI_MONITOR_APP_SRV/$metadata"/>
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://sprgqs:8888/sap/opu/odata/sap/ZPI_MONITOR_APP_SRV/$metadata"/>
                 </Schema>
             </edmx:DataServices>
         </edmx:Edmx>

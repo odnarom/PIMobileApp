@@ -8,6 +8,8 @@ com.springer.pimonitoring.util.Controller.extend("com.springer.pimonitoring.cont
 	 * It sets up the event handling for the master/detail communication and other lifecycle tasks.
 	 */
 	onInit: function() {
+		this.getView().setBusy(true);
+
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
 
 		this.getView().byId("list").attachEventOnce("updateFinished", function() {
@@ -29,6 +31,8 @@ com.springer.pimonitoring.util.Controller.extend("com.springer.pimonitoring.cont
 
 		oEventBus.subscribe("Detail", "Changed", this.onDetailChanged, this);
 		oEventBus.subscribe("Detail", "NotFound", this.onNotFound, this);
+	
+		this.getView().setBusy(false);
 	},
 
 	/**
